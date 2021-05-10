@@ -1,19 +1,22 @@
-import droptop from "../assets/droptop.jpg";
+import Avatar from "@material-ui/core/Avatar";
 
-const Post = () => {
+const Post = ({ username, imageUrl, caption }) => {
   return (
     <div className="post">
-      <h3>Username</h3>
-      {/* header, username and AVI */}
+      <div className="post__header">
+        <Avatar
+          className="post__avatar"
+          alt="Flyxo"
+          src="/static/images/avatar/1.jpg"
+        />
+        <h3>{username}</h3>
+      </div>
 
-      <img className="post__image" src={droptop} alt="" />
-      {/* image */}
+      <img className="post__image" src={imageUrl} alt="" />
 
       <h4 className="post__text">
-        <strong>_flyxo</strong> Drop Top remix dropping soon! @whensdayod
-        @nicktaylorlife!
+        <strong>{username}</strong> {caption}
       </h4>
-      {/*username and caption */}
     </div>
   );
 };

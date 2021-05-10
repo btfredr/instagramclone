@@ -1,4 +1,5 @@
 import Post from "./components/Post";
+import droptop from "./assets/droptop.jpg";
 
 function App() {
   return (
@@ -13,7 +14,24 @@ function App() {
 
       <h1>Hello, welcome to my Instagram Clone!</h1>
 
-      <Post />
+      <Post
+        username="_flyxo"
+        imageUrl={droptop}
+        caption="Drop Top remix dropping soon! @whensdayod
+        @nicktaylorlife"
+      />
+      <Post
+        username="whensdayod"
+        imageUrl={droptop}
+        caption="Drop Top remix dropping soon! @_flyxo
+        @nicktaylorlife"
+      />
+      <Post
+        username="nicktaylorlife"
+        imageUrl={droptop}
+        caption="Drop Top remix dropping soon! @whensdayod
+        @_flyxo"
+      />
     </div>
   );
 }
