@@ -1,3 +1,5 @@
+import Post from "./components/Post";
+
 import "./App.css";
 
 function App() {
@@ -10,6 +12,10 @@ function App() {
           alt=""
         />
       </div>
+
+      <h1>Hello, welcome to my Instagram Clone!</h1>
+
+      <Post />
     </div>
   );
 }
