@@ -1,7 +1,5 @@
 import Post from "./components/Post";
 
-import "./App.css";
-
 function App() {
   return (
     <div className="app">
