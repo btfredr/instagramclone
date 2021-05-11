@@ -1,25 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Post from "./components/Post";
-import droptop from "./assets/droptop.jpg";
+import { db } from "./firebase";
 
 function App() {
-  const [posts, setPosts] = useState([
-    {
-      username: "_flyxo",
-      imageUrl: droptop,
-      caption: "Drop Top remix dropping soon!",
-    },
-    {
-      username: "whensdayod",
-      imageUrl: droptop,
-      caption: "Drop Top remix dropping soon!",
-    },
-    {
-      username: "nicktaylorlife",
-      imageUrl: droptop,
-      caption: "Drop Top remix dropping soon!",
-    },
-  ]);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    db.collection("posts").onSnapshot((snapshot) => {
+      setPosts(snapshot.docs.map((doc) => doc.data()));
+    });
+  }, []);
 
   return (
     <div className="app">
@@ -27,7 +17,7 @@ function App() {
         <img
           src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
           className="app__headerImage"
-          alt=""
+          alt="Instagram logo"
         />
       </div>
 
