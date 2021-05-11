@@ -160,8 +160,8 @@ function App() {
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <Button type="submit" onClick={signUp}>
-              Sign Up
+            <Button type="submit" onClick={signIn}>
+              Sign In
             </Button>
           </form>
         </div>
@@ -178,7 +178,7 @@ function App() {
         <Button onClick={() => auth.signOut()}>Logout</Button>
       ) : (
         <div className="app__loginContainer">
-          <Button onClick={() => setOpen(true)}>Sign In</Button>
+          <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
           <Button onClick={() => setOpen(true)}>Sign Up</Button>
         </div>
       )}
